@@ -1,0 +1,266 @@
+/* ==========================================================================
+   LAXMI PICKLES - RESPONSIVE STYLESHEET
+   Desktop, Tablet, and Mobile layouts
+   ========================================================================== */
+
+/* Large Tablets & Small Laptops (max-width: 1100px) */
+@media (max-width: 1100px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .regional-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .usp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+/* Tablet (max-width: 900px) */
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-left-content {
+    align-items: center;
+  }
+
+  .hero-subtitle {
+    margin: 0 auto 28px;
+  }
+
+  .hero-trust-indicators {
+    justify-content: center;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .combo-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .how-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .insta-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .quickview-grid {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .main-image-frame {
+    height: 300px;
+  }
+
+  .checkout-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Screens (max-width: 640px) */
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .announcement-bar {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    text-align: center;
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+  }
+
+  .brand-tagline-sub {
+    font-size: 0.65rem;
+  }
+
+  .hero-section {
+    padding: 40px 0 60px;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-btn-row {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .hero-btn-row .btn-primary,
+  .hero-btn-row .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-image-frame img {
+    height: 340px;
+  }
+
+  .floating-feature-tag {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+
+  .floating-feature-tag.tag-top-left {
+    top: 10px;
+    left: 10px;
+  }
+
+  .floating-feature-tag.tag-bottom-right {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .usp-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 1 product per row on mobile as requested */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .combo-title {
+    font-size: 2.2rem;
+  }
+
+  .combo-sale-price {
+    font-size: 2.2rem;
+  }
+
+  .combo-box-image-frame img {
+    height: 300px;
+  }
+
+  .story-title {
+    font-size: 2.1rem;
+  }
+
+  .story-main-frame img {
+    height: 320px;
+  }
+
+  .story-stamp-badge {
+    width: 100px;
+    height: 100px;
+    font-size: 0.68rem;
+    padding: 10px;
+    right: -10px;
+    bottom: -15px;
+  }
+
+  .how-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .regional-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cart-drawer-panel {
+    width: 100%;
+  }
+
+  .checkout-modal-dialog {
+    padding: 20px 16px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .advanced-filter-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .spice-pills-wrap {
+    flex-wrap: wrap;
+  }
+
+  #toast-container {
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+  }
+
+  .laxmi-toast {
+    min-width: 0;
+    width: 100%;
+  }
+}

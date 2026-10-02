@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAXMI Pickles | Ghar Ka Swad, Har Bite Mein — Premium Homemade Indian Achar</title>
+  <meta name="description" content="Authentic Indian homemade pickles (achar) made with traditional recipes, hand-pounded spices, and pure cold-pressed mustard oil. Free delivery across India." />
+  <meta name="theme-color" content="#85181a" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2385181a'/><circle cx='50' cy='50' r='40' fill='none' stroke='%23d98207' stroke-width='4'/><text x='50' y='64' font-family='serif' font-size='42' font-weight='bold' text-anchor='middle' fill='%23ffffff'>ल</text></svg>" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================== -->
+  <aside class="announcement-bar" role="region" aria-label="Special Offers">
+    <span>Free Delivery on Orders Above ₹499</span>
+    <span class="highlight-badge">Code: GHARKASWAD</span>
+    <span class="d-none-sm">• 100% Traditional Rooftop Sun-Cured Achar</span>
+  </aside>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION BAR
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <!-- Left: Brand Logo & Tagline -->
+      <a href="#home" class="brand-logo-link" aria-label="LAXMI Home">
+        <div class="brand-emblem" aria-hidden="true">ल</div>
+        <div class="brand-text-stack">
+          <span class="brand-name">LAXMI</span>
+          <span class="brand-tagline-sub">Ghar Ka Swad</span>
+        </div>
+      </a>
+
+      <!-- Center: Desktop Navigation -->
+      <nav class="desktop-navigation" aria-label="Main Navigation">
+        <ul class="desktop-nav">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#our-story">Our Story</a></li>
+          <li><a href="#categories">Pickles</a></li>
+          <li><a href="#combos">Combos</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right: Action Icons (Search, Account, Wishlist, Cart) -->
+      <div class="nav-actions">
+        <!-- Search Trigger -->
+        <button type="button" class="nav-icon-btn" id="btn-nav-search" title="Search Pickles" onclick="window.app.navigateToSection('shop')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Account Trigger -->
+        <button type="button" class="nav-icon-btn" id="btn-nav-account" title="Account / Sign In" onclick="window.app.openAuth('login')">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+
+        <!-- Wishlist Trigger -->
+        <button type="button" class="nav-icon-btn" id="btn-nav-wishlist" title="View Wishlist" onclick="window.app.openWishlist()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="icon-counter-badge" id="wishlist-count-badge" style="display: none;">0</span>
+        </button>
+
+        <!-- Shopping Cart Trigger -->
+        <button type="button" class="nav-icon-btn" id="btn-nav-cart" title="Shopping Cart" onclick="window.app.openCart()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="icon-counter-badge" id="cart-count-badge" style="display: none;">0</span>
+        </button>
+
+        <!-- Mobile Hamburger Trigger -->
+        <button type="button" class="hamburger-btn" id="btn-hamburger" aria-label="Open Mobile Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Dropdown -->
+    <div class="mobile-nav-drawer" id="mobile-nav-menu">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" onclick="window.app.navigateToSection('home')">Home</a></li>
+        <li><a href="#shop" onclick="window.app.navigateToSection('shop')">Shop All Pickles</a></li>
+        <li><a href="#our-story" onclick="window.app.navigateToSection('our-story')">Our Story</a></li>
+        <li><a href="#categories" onclick="window.app.navigateToSection('categories')">Browse Categories</a></li>
+        <li><a href="#combos" onclick="window.app.navigateToSection('combos')">The Ultimate Combo</a></li>
+        <li><a href="#reviews" onclick="window.app.navigateToSection('reviews')">Customer Reviews</a></li>
+        <li><a href="#contact" onclick="window.app.navigateToSection('contact')">Contact & Support</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <!-- Left Side Copy & CTAs -->
+        <div class="hero-left-content">
+          <div class="hero-eyebrow-pill">
+            <span class="dot"></span>
+            <span>100% Homemade Taste • Heirloom Recipes</span>
+          </div>
+
+          <h1 class="hero-title">
+            Authentic Indian Pickles, <br />
+            <span class="title-accent">Made With Love</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Traditional recipes, hand-picked ingredients, and the unmistakable taste of homemade achar slow-matured under golden Indian sunshine.
+          </p>
+
+          <div class="hero-btn-row">
+            <a href="#shop" class="btn-primary" onclick="window.app.navigateToSection('shop')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+              Shop Pickles
+            </a>
+
+            <a href="#combos" class="btn-secondary" onclick="window.app.navigateToSection('combos')">
+              Explore Combos
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Small Trust Indicators -->
+          <div class="hero-trust-indicators">
+            <div class="trust-item">
+              <span class="check-circle">✓</span>
+              <span>Homemade Taste</span>
+            </div>
+            <div class="trust-item">
+              <span class="check-circle">✓</span>
+              <span>Traditional Recipes</span>
+            </div>
+            <div class="trust-item">
+              <span class="check-circle">✓</span>
+              <span>Quality Ingredients</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side Photography & Floating Motifs -->
+        <div class="hero-media-wrapper">
+          <div class="hero-pattern-bg"></div>
+
+          <!-- Floating Feature Badges -->
+          <div class="floating-feature-tag tag-top-left">
+            <span style="color:#d98207; font-size:1.1rem;">🏺</span>
+            <span>Cured in Ceramic Barni</span>
+          </div>
+
+          <div class="hero-image-frame">
+            <img src="assets/images/hero-pickle.jpg" alt="LAXMI Traditional Indian Pickles in Ceramic Barnis and Brass Bowls" width="600" height="480" />
+          </div>
+
+          <div class="floating-feature-tag tag-bottom-right">
+            <span style="color:#2d5a27; font-size:1.1rem;">🌿</span>
+            <span>Pure Kacchi Ghani Mustard Oil</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TRUST / USP SECTION -->
+    <section class="usp-section" aria-label="Brand Benefits">
+      <div class="container usp-grid">
+        <div class="usp-card">
+          <div class="usp-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="usp-title">100% Authentic Taste</h3>
+            <p class="usp-desc">Traditional Indian pickle recipes crafted by experienced home cooks.</p>
+          </div>
+        </div>
+
+        <div class="usp-card">
+          <div class="usp-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="usp-title">Premium Ingredients</h3>
+            <p class="usp-desc">Carefully selected fruits, crisp vegetables, and stone-ground spices.</p>
+          </div>
+        </div>
+
+        <div class="usp-card">
+          <div class="usp-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="usp-title">Made With Care</h3>
+            <p class="usp-desc">Inspired by homemade recipes, handcrafted patiently in small batches.</p>
+          </div>
+        </div>
+
+        <div class="usp-card">
+          <div class="usp-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="usp-title">Packed Fresh</h3>
+            <p class="usp-desc">Freshly prepared and hygienically sealed in food-grade glass jars.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SHOP BY CATEGORY -->
+    <section class="categories-section" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pretitle">Flavours You Crave</span>
+          <h2 class="section-heading">Pick Your Favourite Achar</h2>
+          <p class="section-subtext">From tangy sun-cured raw mango to fiery slit green chillies, explore our traditional assortment.</p>
+        </div>
+
+        <div class="category-grid" id="category-grid-container">
+          <!-- Rendered dynamically by components.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BESTSELLERS SECTION -->
+    <section class="bestsellers-section" id="bestsellers">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pretitle">Beloved In Every Home</span>
+          <h2 class="section-heading">Our Bestselling Pickles</h2>
+          <p class="section-subtext">The quintessential flavours that make every Indian meal complete. Loved by over 50,000 households.</p>
+        </div>
+
+        <div class="product-grid" id="bestseller-grid-container">
+          <!-- Rendered dynamically by components.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FEATURED COMBO SECTION -->
+    <section class="combo-section" id="combos">
+      <div class="container combo-grid">
+        <div class="combo-media-col">
+          <div class="combo-box-image-frame">
+            <img src="assets/images/combo-box.jpg" alt="The Ultimate LAXMI Achar Combo Gift Box with 4 Jars" width="560" height="420" />
+          </div>
+        </div>
+
+        <div class="combo-content-col">
+          <div class="combo-badge-row">
+            <span class="badge-best-value">BEST VALUE</span>
+            <span class="badge-jars-count">4 Flavours • 1 Delicious Combo</span>
+          </div>
+
+          <h2 class="combo-title">The Ultimate Achar Combo</h2>
+          <p class="combo-subtitle">Taste Every Flavour of Indian Tradition</p>
+
+          <p class="combo-desc">
+            Can’t decide which pickle to bring home? Get all four of our signature handcrafted favourites in an opulent presentation box. Hand-packed with pure kacchi ghani mustard oil.
+          </p>
+
+          <div class="combo-jars-pills">
+            <span class="combo-jar-item"><span class="bullet">✦</span> Classic Mango Pickle</span>
+            <span class="combo-jar-item"><span class="bullet">✦</span> Tangy Lemon Pickle</span>
+            <span class="combo-jar-item"><span class="bullet">✦</span> Slit Green Chilli Pickle</span>
+            <span class="combo-jar-item"><span class="bullet">✦</span> Royal Mixed Pachranga</span>
+          </div>
+
+          <div class="combo-pricing-bar">
+            <span class="combo-sale-price">₹699</span>
+            <span class="combo-regular-price">₹799</span>
+            <span class="combo-save-pill">SAVE ₹100</span>
+          </div>
+
+          <button type="button" class="btn-buy-combo" onclick="window.app.buyComboNow()">
+            Buy Combo Box
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. BRAND STORY SECTION -->
+    <section class="story-section" id="our-story">
+      <div class="container story-grid">
+        <div class="story-media-box">
+          <div class="story-main-frame">
+            <img src="assets/images/brand-story.jpg" alt="Indian Grandmother hand-preparing pickles under courtyard sunshine" width="560" height="480" />
+          </div>
+          <div class="story-stamp-badge">
+            <span>Heirloom<br />Since<br />1964</span>
+          </div>
+        </div>
+
+        <div class="story-content">
+          <span class="story-quote-tag">Our Heritage & Legacy</span>
+          <h2 class="story-title">From Our Kitchen to Your Table</h2>
+          
+          <p class="story-paragraph">
+            LAXMI was created to bring the authentic taste of traditional Indian homemade pickles to every home. Inspired by recipes passed down through generations, we combine traditional preparation methods with carefully selected ingredients.
+          </p>
+
+          <p class="story-paragraph">
+            In an era of mass industrial production rushed with chemical vinegars, we believe in patience. Our raw mangoes, Kagzi lemons, and vegetables are washed, sliced by hand, spiced with stone-ground masalas, and left to mature under the warmth of the sun in glazed ceramic martabans.
+          </p>
+
+          <div class="story-signature-row">
+            <div>
+              <h4 class="story-author-name">Dadi Laxmi Devi</h4>
+              <span class="story-author-role">Master Recipe Custodian</span>
+            </div>
+            <a href="#shop" class="btn-secondary" onclick="window.app.navigateToSection('shop')">
+              Taste Our Pickles
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. HOW IT'S MADE SECTION -->
+    <section class="how-it-made-section" id="how-its-made">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pretitle">The Art of Pure Preservation</span>
+          <h2 class="section-heading">Made The Traditional Way</h2>
+          <p class="section-subtext">Four disciplined steps that ensure pure taste, rich natural aroma, and zero artificial preservatives.</p>
+        </div>
+
+        <div class="how-steps-grid" id="how-made-container">
+          <!-- Rendered dynamically by components.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. REGIONAL FLAVOURS SECTION -->
+    <section class="regional-section" id="regional">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pretitle">India’s Culinary Diversity</span>
+          <h2 class="section-heading">Flavours From Every Corner of India</h2>
+          <p class="section-subtext">Explore the distinct pickle cultures and culinary secrets preserved across North, South, East, and West India.</p>
+        </div>
+
+        <div class="regional-grid" id="regional-grid-container">
+          <!-- Rendered dynamically by components.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DEDICATED SHOP PAGE VIEW -->
+    <section class="shop-page-section" id="shop">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pretitle">Full Artisanal Collection</span>
+          <h2 class="section-heading">Shop Authentic Pickles</h2>
+          <p class="section-subtext">Select your jar size, choose your spice preference, and order freshly packed achar right to your doorstep.</p>
+        </div>
+
+        <!-- Shop Filter & Search Toolbar -->
+        <div class="shop-header-bar">
+          <!-- Top Row: Search & Sort -->
+          <div class="shop-search-row">
+            <div class="search-input-wrap">
+              <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="shop-search-input" placeholder="Search by name, spice, or ingredient (e.g. Mango, Garlic, Rai)..." />
+            </div>
+
+            <div class="shop-sort-wrap">
+              <label for="shop-sort-select">Sort By:</label>
+              <select id="shop-sort-select">
+                <option value="popular">Most Popular</option>
+                <option value="rating">Highest Rated</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="filter-tabs-row" role="tablist">
+            <button type="button" class="category-filter-btn active" data-category="all">All Pickles</button>
+            <button type="button" class="category-filter-btn" data-category="mango">Mango (Aam)</button>
+            <button type="button" class="category-filter-btn" data-category="lemon">Lemon (Nimbu)</button>
+            <button type="button" class="category-filter-btn" data-category="green-chilli">Green Chilli (Mirch)</button>
+            <button type="button" class="category-filter-btn" data-category="mixed">Mixed (Pachranga)</button>
+            <button type="button" class="category-filter-btn" data-category="garlic">Garlic (Lahsun)</button>
+            <button type="button" class="category-filter-btn" data-category="combos">Gift Combos</button>
+            <button type="button" class="category-filter-btn" data-category="regional">Regional Specials</button>
+          </div>
+
+          <!-- Advanced Filters (Price Slider & Spice Levels) -->
+          <div class="advanced-filter-toolbar">
+            <div class="filter-tool-group">
+              <label for="price-range-slider">Max Price (250g):</label>
+              <div class="price-slider-wrap">
+                <input type="range" id="price-range-slider" min="150" max="1000" step="50" value="1000" />
+                <span class="price-slider-val" id="price-range-val">₹1000</span>
+              </div>
+            </div>
+
+            <div class="filter-tool-group">
+              <label>Spice Profile:</label>
+              <div class="spice-pills-wrap">
+                <button type="button" class="spice-filter-btn active" data-spice="all">All</button>
+                <button type="button" class="spice-filter-btn" data-spice="Mild">Mild</button>
+                <button type="button" class="spice-filter-btn" data-spice="Medium">Medium</button>
+                <button type="button" class="spice-filter-btn" data-spice="Spicy">Extra Spicy</button>
+              </div>
+            </div>
+
+            <div class="shop-results-meta" id="shop-results-count">
+              Showing 8 authentic pickles
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Product Catalog Grid -->
+        <div class="product-grid" id="shop-products-grid">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. CUSTOMER REVIEWS SECTION -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-pretitle">Words From Our Patrons</span>
+          <h2 class="section-heading">What Our Customers Say</h2>
+          <p class="section-subtext">Real experiences from homes across India who made LAXMI a permanent fixture at their dining tables.</p>
+        </div>
+
+        <div class="reviews-grid" id="reviews-grid-container">
+          <!-- Rendered dynamically by components.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. INSTAGRAM / SOCIAL SECTION -->
+    <section class="instagram-section" id="instagram">
+      <div class="container">
+        <div class="insta-handle-header">
+          <span class="section-pretitle">#GharKaSwad Community</span>
+          <h2 class="section-heading">Follow the Achar Journey</h2>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="insta-handle-link">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            @laxmipickles
+          </a>
+        </div>
+
+        <div class="insta-grid" id="instagram-grid-container">
+          <!-- Rendered dynamically by components.js -->
+        </div>
+
+        <div class="insta-btn-center">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            Follow Us on Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. NEWSLETTER SECTION -->
+    <section class="newsletter-section" id="newsletter">
+      <div class="container">
+        <div class="newsletter-box">
+          <span class="section-pretitle">Join Our Food Family</span>
+          <h2 class="newsletter-title">Stay Connected With LAXMI</h2>
+          <p class="newsletter-desc">
+            Get new seasonal batch alerts, secret traditional recipes, and an instant 10% coupon code straight to your inbox.
+          </p>
+
+          <form class="newsletter-form" onsubmit="window.app.handleNewsletterSubmit(event)">
+            <input type="email" id="newsletter-email-input" class="newsletter-input" required placeholder="Enter your email address..." />
+            <button type="submit" class="btn-subscribe">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Tagline -->
+        <div class="footer-brand">
+          <div class="brand-name">LAXMI</div>
+          <div class="brand-tagline-sub">"Ghar Ka Swad, Har Bite Mein"</div>
+          <p class="footer-about-text">
+            Crafting India’s finest artisanal achar with heirloom family recipes, sun-drying techniques, and pure cold-pressed oils. Zero chemicals, 100% natural joy.
+          </p>
+          <div class="footer-trust-seals">
+            <span class="seal-pill">FSSAI Certified</span>
+            <span class="seal-pill">100% Vegetarian</span>
+            <span class="seal-pill">No Preservatives</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Quick Links</h3>
+          <ul class="footer-links-list">
+            <li><a href="#home" onclick="window.app.navigateToSection('home')">Home</a></li>
+            <li><a href="#shop" onclick="window.app.navigateToSection('shop')">Shop All Pickles</a></li>
+            <li><a href="#our-story" onclick="window.app.navigateToSection('our-story')">Our Heritage Story</a></li>
+            <li><a href="#combos" onclick="window.app.navigateToSection('combos')">Artisanal Combos</a></li>
+            <li><a href="#reviews" onclick="window.app.navigateToSection('reviews')">Customer Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Customer Support -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Customer Support</h3>
+          <ul class="footer-links-list">
+            <li><a href="javascript:void(0)" onclick="store.showToast('Shipping Info', 'Orders above ₹499 qualify for Free Nationwide Express Delivery!', 'info')">Shipping Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="store.showToast('Return Guarantee', '100% replacement guarantee if damaged during transit.', 'info')">Returns & Refunds</a></li>
+            <li><a href="javascript:void(0)" onclick="store.showToast('FAQ', 'Our pickles have a 12-month shelf life without chemical preservatives.', 'info')">FAQs</a></li>
+            <li><a href="javascript:void(0)" onclick="store.showToast('Privacy Policy', 'Your details are safe and never shared.', 'info')">Privacy Policy</a></li>
+            <li><a href="javascript:void(0)" onclick="store.showToast('Terms', 'All prices in INR inclusive of GST.', 'info')">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Information -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Contact Us</h3>
+          <ul class="footer-contact-items">
+            <li class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>care@laxmipickles.com</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>+91 98765 43210 (Mon-Sat, 9AM-7PM)</span>
+            </li>
+            <li class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>14 Heritage Haveli Lane, Old Delhi, India - 110006</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">
+          © 2026 LAXMI Pickles. All Rights Reserved. Crafted with love & spices in India.
+        </p>
+
+        <div class="footer-social-links">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-link" title="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS & SLIDEOVERS
+       ========================================================================== -->
+
+  <!-- 1. SLIDE-OVER SHOPPING CART DRAWER -->
+  <div class="drawer-overlay" id="drawer-overlay" onclick="window.app.closeCart()"></div>
+  <aside class="cart-drawer-panel" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3 class="cart-header-title">Your Achar Basket</h3>
+      <button type="button" class="btn-modal-close" onclick="window.app.closeCart()" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-drawer-body" id="cart-drawer-body">
+      <!-- Injected by components.js renderCartDrawerContent() -->
+    </div>
+  </aside>
+
+  <!-- 2. PRODUCT QUICK VIEW / DETAIL MODAL -->
+  <div class="modal-backdrop" id="quickview-modal" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <button type="button" class="btn-modal-close" onclick="window.app.closeQuickView()" aria-label="Close modal">&times;</button>
+      <div id="quickview-modal-content">
+        <!-- Injected by components.js renderQuickViewModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CHECKOUT MODAL (MULTI-STEP FLOW) -->
+  <div class="modal-backdrop" id="checkout-modal" role="dialog" aria-modal="true">
+    <div class="modal-dialog checkout-modal-dialog">
+      <button type="button" class="btn-modal-close" onclick="window.app.closeCheckout()" aria-label="Close modal">&times;</button>
+      <div id="checkout-modal-body">
+        <!-- Injected by app.js renderCheckoutModalContent() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. ORDER CONFIRMATION CELEBRATION MODAL -->
+  <div class="modal-backdrop" id="order-success-modal" role="dialog" aria-modal="true">
+    <div class="modal-dialog" style="max-width: 650px;">
+      <button type="button" class="btn-modal-close" onclick="window.app.closeOrderConfirmation()" aria-label="Close modal">&times;</button>
+      <div id="order-success-body">
+        <!-- Injected by app.js showOrderConfirmation() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. AUTHENTICATION MODAL (SIGN IN / CREATE ACCOUNT) -->
+  <div class="modal-backdrop" id="auth-modal" role="dialog" aria-modal="true">
+    <div class="modal-dialog auth-dialog">
+      <button type="button" class="btn-modal-close" onclick="window.app.closeAuth()" aria-label="Close modal">&times;</button>
+      <div id="auth-modal-body">
+        <!-- Injected by app.js renderAuthModalContent() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. WISHLIST MODAL -->
+  <div class="modal-backdrop" id="wishlist-modal" role="dialog" aria-modal="true">
+    <div class="modal-dialog wishlist-dialog">
+      <button type="button" class="btn-modal-close" onclick="window.app.closeWishlist()" aria-label="Close modal">&times;</button>
+      <div id="wishlist-modal-body">
+        <!-- Injected by app.js renderWishlistModalContent() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. FLOATING TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="js/app.js"></script>
+
+  <!-- Sticky Navbar Shadow Script -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('site-header');
+      if (header) {
+        if (window.scrollY > 30) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
