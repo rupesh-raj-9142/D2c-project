@@ -7,7 +7,7 @@ export const CATEGORIES = [
     name: 'Mango Pickle',
     hindi: 'आम का अचार',
     shortDesc: 'Sun-cured raw Ramkela mangoes in cold-pressed mustard oil with heirloom spices.',
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/mango-pickle.jpg',
     tag: 'All Time Favourite'
   },
   {
@@ -15,7 +15,7 @@ export const CATEGORIES = [
     name: 'Lemon Pickle',
     hindi: 'नींबू का अचार',
     shortDesc: 'Juicy Kagzi limes slow-cured with rock salt, ajwain and digestive warming spices.',
-    image: 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/lemon-pickle.jpg',
     tag: 'Digestive & Tangy'
   },
   {
@@ -23,7 +23,7 @@ export const CATEGORIES = [
     name: 'Green Chilli Pickle',
     hindi: 'हरी मिर्च का अचार',
     shortDesc: 'Crisp green chillies hand-slit and packed with stone-ground rai and amchur.',
-    image: 'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/chilli-pickle.jpg',
     tag: 'Fiery & Bold'
   },
   {
@@ -31,7 +31,7 @@ export const CATEGORIES = [
     name: 'Mixed Pickle',
     hindi: 'पचरंगा अचार',
     shortDesc: 'Celebratory blend of crunchy seasonal vegetables marinated in Punjabi masala.',
-    image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/mixed-pickle.jpg',
     tag: 'Grandmother Recipe'
   },
   {
@@ -39,7 +39,7 @@ export const CATEGORIES = [
     name: 'Garlic Pickle',
     hindi: 'लहसुन का अचार',
     shortDesc: 'Whole aromatic garlic cloves steeped in Kashmiri red chilli and mustard gravy.',
-    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/garlic-pickle.jpg',
     tag: 'Rich & Therapeutic'
   },
   {
@@ -47,7 +47,7 @@ export const CATEGORIES = [
     name: 'Special Regional Pickles',
     hindi: 'क्षेत्रीय विशेषताएं',
     shortDesc: 'Rare heirloom recipes from Bihar, Rajasthan, Gujarat, North & South India.',
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
+    image: 'assets/images/hero-pickle.jpg',
     tag: 'Heritage Treasures'
   }
 ];
@@ -64,7 +64,7 @@ export const PRODUCTS = [
     spiceLevel: 'Medium Spicy',
     shelfLife: '12 Months',
     badges: ['Bestseller', 'Sun-Matured'],
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/mango-pickle.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
@@ -109,7 +109,7 @@ export const PRODUCTS = [
     spiceLevel: 'Tangy & Mild',
     shelfLife: '18 Months',
     badges: ['Digestive', 'Heirloom'],
-    image: 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/lemon-pickle.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
@@ -153,7 +153,7 @@ export const PRODUCTS = [
     spiceLevel: 'Extra Spicy',
     shelfLife: '9 Months',
     badges: ['Fiery Punch', 'Customer Love'],
-    image: 'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/chilli-pickle.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
@@ -198,7 +198,7 @@ export const PRODUCTS = [
     spiceLevel: 'Medium Spicy',
     shelfLife: '12 Months',
     badges: ['Top Rated', 'Grandma’s Special'],
-    image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/mixed-pickle.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
@@ -243,7 +243,7 @@ export const PRODUCTS = [
     spiceLevel: 'Spicy & Robust',
     shelfLife: '12 Months',
     badges: ['Immunity Booster', 'Aromatic'],
-    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/garlic-pickle.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
@@ -288,7 +288,7 @@ export const PRODUCTS = [
     spiceLevel: 'Assorted Range',
     shelfLife: '12-18 Months',
     badges: ['BEST VALUE', 'Gift Ready', 'Save ₹100'],
-    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/combo-box.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
@@ -327,7 +327,7 @@ export const PRODUCTS = [
     spiceLevel: 'Pungent & Tangy',
     shelfLife: '12 Months',
     badges: ['Bihari Heritage', 'Rare Delicacy'],
-    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
+    image: 'assets/images/hero-pickle.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
       'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop&q=80'
@@ -370,7 +370,7 @@ export const PRODUCTS = [
     spiceLevel: 'Marwari Spicy',
     shelfLife: '12 Months',
     badges: ['Marwar Royal', 'Artisanal Batch'],
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop&q=80',
+    image: 'assets/images/brand-story.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80'
