@@ -4,6 +4,14 @@
 import { store } from './store.js';
 import { PRODUCTS } from './data.js';
 
+// Safe image path resolver
+export function getImageUrl(path) {
+  if (!path) return '/assets/images/hero-pickle.jpg';
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  if (!path.startsWith('/')) return '/' + path;
+  return path;
+}
+
 // Helper for rendering star SVGs
 export function renderStars(rating) {
   const fullStars = Math.floor(rating);
@@ -33,7 +41,7 @@ export function renderProductCard(product, selectedWeightIdx = 0) {
     <article class="laxmi-product-card" data-product-id="${product.id}" data-selected-weight="${currentWeightObj.weight}">
       <div class="product-media">
         <div class="media-container" onclick="window.app.openQuickView('${product.id}')">
-          <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy" />
+          <img src="${getImageUrl(product.image)}" alt="${product.name}" class="product-img" loading="lazy" onerror="this.onerror=null; this.src='/assets/images/hero-pickle.jpg';" />
           <div class="image-overlay-glow"></div>
         </div>
 
@@ -127,7 +135,7 @@ export function renderCategoryCard(cat) {
   return `
     <div class="category-card" onclick="window.app.filterByCategory('${cat.id}')">
       <div class="category-media">
-        <img src="${cat.image}" alt="${cat.name}" loading="lazy" />
+        <img src="${getImageUrl(cat.image)}" alt="${cat.name}" loading="lazy" onerror="this.onerror=null; this.src='/assets/images/hero-pickle.jpg';" />
         <div class="cat-tag-pill">${cat.tag}</div>
       </div>
       <div class="category-body">
@@ -190,7 +198,7 @@ export function renderRegionalCard(card) {
   return `
     <div class="regional-card">
       <div class="regional-media">
-        <img src="${card.image}" alt="${card.region}" loading="lazy" />
+        <img src="${getImageUrl(card.image)}" alt="${card.region}" loading="lazy" onerror="this.onerror=null; this.src='/assets/images/hero-pickle.jpg';" />
         <span class="region-badge">${card.region}</span>
         <span class="flavour-tag">${card.tag}</span>
       </div>
@@ -212,7 +220,7 @@ export function renderRegionalCard(card) {
 export function renderInstagramPost(post) {
   return `
     <div class="insta-post-card" onclick="window.open('https://instagram.com', '_blank')">
-      <img src="${post.image}" alt="LAXMI Achar Story" loading="lazy" />
+      <img src="${getImageUrl(post.image)}" alt="LAXMI Achar Story" loading="lazy" onerror="this.onerror=null; this.src='/assets/images/hero-pickle.jpg';" />
       <div class="insta-overlay">
         <div class="insta-icons">
           <span class="insta-stat">
@@ -272,7 +280,7 @@ export function renderCartDrawerContent() {
         .map(
           (item) => `
         <div class="cart-item-row" data-cart-id="${item.cartItemId}">
-          <img src="${item.image}" alt="${item.name}" class="cart-item-thumb" />
+          <img src="${getImageUrl(item.image)}" alt="${item.name}" class="cart-item-thumb" onerror="this.onerror=null; this.src='/assets/images/hero-pickle.jpg';" />
           <div class="cart-item-details">
             <h4 class="cart-item-name">${item.name}</h4>
             <div class="cart-item-meta">
@@ -385,7 +393,7 @@ export function renderQuickViewModal(product, currentWeightIdx = 0, currentQty =
       <!-- Media Gallery -->
       <div class="quickview-gallery">
         <div class="main-image-frame">
-          <img src="${product.gallery[0] || product.image}" id="qv-main-img" alt="${product.name}" />
+          <img src="${getImageUrl(product.gallery[0] || product.image)}" id="qv-main-img" alt="${product.name}" onerror="this.onerror=null; this.src='/assets/images/hero-pickle.jpg';" />
           ${product.badges && product.badges.length ? `<span class="qv-badge">${product.badges[0]}</span>` : ''}
         </div>
         <div class="qv-thumbnails">
@@ -393,7 +401,7 @@ export function renderQuickViewModal(product, currentWeightIdx = 0, currentQty =
             .map(
               (img, i) => `
             <button type="button" class="qv-thumb-btn ${i === 0 ? 'active' : ''}" onclick="window.app.switchQvImage('${img}', this)">
-              <img src="${img}" alt="Thumbnail ${i + 1}" />
+              <img src="${getImageUrl(img)}" alt="Thumbnail ${i + 1}" onerror="this.onerror=null; this.src='/assets/images/hero-pickle.jpg';" />
             </button>
           `
             )

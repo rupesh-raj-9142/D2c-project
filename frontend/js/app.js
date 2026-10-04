@@ -17,7 +17,8 @@ import {
   renderRegionalCard,
   renderInstagramPost,
   renderCartDrawerContent,
-  renderQuickViewModal
+  renderQuickViewModal,
+  getImageUrl
 } from './components.js';
 
 class App {
@@ -479,10 +480,10 @@ class App {
     body.innerHTML = `
       <div class="wishlist-grid">
         ${items
-          .map(
-            (p) => `
+        .map(
+          (p) => `
           <div class="wishlist-item-card">
-            <img src="${p.image}" alt="${p.name}" class="wish-thumb" />
+            <img src="${getImageUrl(p.image)}" alt="${p.name}" class="wish-thumb" onerror="this.onerror=null; this.src='/assets/images/hero-pickle.jpg';" />
             <div class="wish-info">
               <h4>${p.name}</h4>
               <p class="wish-price">Starting from ₹${p.weights[0].price}</p>
@@ -497,8 +498,8 @@ class App {
             </div>
           </div>
         `
-          )
-          .join('')}
+        )
+        .join('')}
       </div>
     `;
   }
@@ -668,10 +669,10 @@ class App {
             
             <div class="checkout-items-preview">
               ${store.cart
-                .map(
-                  (item) => `
+        .map(
+          (item) => `
                 <div class="checkout-item-line">
-                  <img src="${item.image}" alt="${item.name}" />
+                  <img src="${getImageUrl(item.image)}" alt="${item.name}" onerror="this.onerror=null; this.src='/assets/images/hero-pickle.jpg';" />
                   <div class="co-item-info">
                     <span class="co-name">${item.name}</span>
                     <span class="co-meta">${item.weight} × ${item.quantity}</span>
@@ -679,8 +680,8 @@ class App {
                   <span class="co-price">₹${item.price * item.quantity}</span>
                 </div>
               `
-                )
-                .join('')}
+        )
+        .join('')}
             </div>
 
             <div class="summary-breakdown">
@@ -812,6 +813,32 @@ class App {
     const body = document.getElementById('auth-modal-body');
     if (!body) return;
 
+    if (store.user) {
+      body.innerHTML = `
+        <div class="user-account-card" style="text-align: center; padding: 1.5rem 0.5rem;">
+          <div style="width: 72px; height: 72px; border-radius: 50%; background: #96281b; color: #fff; font-size: 2rem; font-weight: bold; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 4px 12px rgba(150,40,27,0.25);">
+            ${store.user.avatar || 'U'}
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: #231f20; margin-bottom: 0.25rem;">
+            ${store.user.name}
+          </h3>
+          <p style="color: #666; font-size: 0.95rem; margin-bottom: 0.35rem;">${store.user.email}</p>
+          <p style="color: #888; font-size: 0.85rem; margin-bottom: 1.5rem;">
+            ${store.user.phone || '+91 98765 43210'} • <span style="background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 12px; font-weight: 600;">${store.user.role || 'CUSTOMER'}</span>
+          </p>
+          <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+            <button type="button" class="btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.95rem;" onclick="window.app.closeAuth(); window.app.navigateToSection('shop')">
+              Explore Achar Shop
+            </button>
+            <button type="button" class="btn-secondary" style="padding: 0.75rem 1.5rem; font-size: 0.95rem; background: #fff; border: 1.5px solid #d48b10; color: #96281b; border-radius: 8px; cursor: pointer; font-weight: 600;" onclick="window.store.logoutUser(); window.app.closeAuth();">
+              Sign Out
+            </button>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
     body.innerHTML = `
       <div class="auth-tabs-row">
         <button type="button" class="auth-tab-btn ${activeTab === 'login' ? 'active' : ''}" onclick="window.app.renderAuthModalContent('login')">
@@ -822,9 +849,8 @@ class App {
         </button>
       </div>
 
-      ${
-        activeTab === 'login'
-          ? `
+      ${activeTab === 'login'
+        ? `
         <form class="auth-form" onsubmit="window.app.handleLoginSubmit(event)">
           <div class="form-group">
             <label>Email Address or Mobile Number</label>
@@ -850,7 +876,7 @@ class App {
           </button>
         </form>
       `
-          : `
+        : `
         <form class="auth-form" onsubmit="window.app.handleSignupSubmit(event)">
           <div class="form-group">
             <label>Full Name</label>
@@ -885,21 +911,50 @@ class App {
     `;
   }
 
-  handleLoginSubmit(e) {
+  async handleLoginSubmit(e) {
     e.preventDefault();
     const email = document.getElementById('login-email').value;
-    const name = email.split('@')[0];
-    store.loginUser({ name: name.charAt(0).toUpperCase() + name.slice(1), email });
-    this.closeAuth();
+    const password = document.getElementById('login-password').value;
+    const submitBtn = e.target.querySelector('.btn-auth-submit');
+    const originalText = submitBtn ? submitBtn.textContent : 'Sign In';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Signing In...';
+    }
+
+    const res = await store.loginUser({ email, password });
+    if (res?.success) {
+      this.closeAuth();
+    } else {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    }
   }
 
-  handleSignupSubmit(e) {
+  async handleSignupSubmit(e) {
     e.preventDefault();
     const name = document.getElementById('reg-name').value;
     const email = document.getElementById('reg-email').value;
     const phone = document.getElementById('reg-phone').value;
-    store.loginUser({ name, email, phone });
-    this.closeAuth();
+    const password = document.getElementById('reg-password').value;
+    const submitBtn = e.target.querySelector('.btn-auth-submit');
+    const originalText = submitBtn ? submitBtn.textContent : 'Create Free Account';
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Creating Account...';
+    }
+
+    const res = await store.registerUser({ name, email, phone, password });
+    if (res?.success) {
+      this.closeAuth();
+    } else {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    }
   }
 
   mockGoogleAuth() {
@@ -1079,17 +1134,22 @@ class App {
     });
   }
 
-  handleNewsletterSubmit(event) {
+  async handleNewsletterSubmit(event) {
     event.preventDefault();
     const input = document.getElementById('newsletter-email-input');
     if (!input || !input.value) return;
 
-    store.showToast(
-      'Subscribed!',
-      `Welcome to LAXMI Parivaar! Use coupon "GHARKASWAD" for 10% off your first order.`,
-      'success'
-    );
-    input.value = '';
+    try {
+      await api.subscribeNewsletter(input.value.trim());
+      store.showToast(
+        'Subscribed!',
+        `Welcome to LAXMI Parivaar! Use coupon "GHARKASWAD" for 10% off your first order.`,
+        'success'
+      );
+      input.value = '';
+    } catch (err) {
+      store.showToast('Newsletter Info', err.message || 'Thank you for connecting with LAXMI!', 'info');
+    }
   }
 }
 
