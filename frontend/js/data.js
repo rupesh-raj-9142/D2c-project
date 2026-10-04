@@ -7,7 +7,7 @@ export const CATEGORIES = [
     name: 'Mango Pickle',
     hindi: 'आम का अचार',
     shortDesc: 'Sun-cured raw Ramkela mangoes in cold-pressed mustard oil with heirloom spices.',
-    image: '/assets/images/mango-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
     tag: 'All Time Favourite'
   },
   {
@@ -15,7 +15,7 @@ export const CATEGORIES = [
     name: 'Lemon Pickle',
     hindi: 'नींबू का अचार',
     shortDesc: 'Juicy Kagzi limes slow-cured with rock salt, ajwain and digestive warming spices.',
-    image: '/assets/images/lemon-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&auto=format&fit=crop&q=80',
     tag: 'Digestive & Tangy'
   },
   {
@@ -23,7 +23,7 @@ export const CATEGORIES = [
     name: 'Green Chilli Pickle',
     hindi: 'हरी मिर्च का अचार',
     shortDesc: 'Crisp green chillies hand-slit and packed with stone-ground rai and amchur.',
-    image: '/assets/images/chilli-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?w=800&auto=format&fit=crop&q=80',
     tag: 'Fiery & Bold'
   },
   {
@@ -31,7 +31,7 @@ export const CATEGORIES = [
     name: 'Mixed Pickle',
     hindi: 'पचरंगा अचार',
     shortDesc: 'Celebratory blend of crunchy seasonal vegetables marinated in Punjabi masala.',
-    image: '/assets/images/mixed-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80',
     tag: 'Grandmother Recipe'
   },
   {
@@ -39,7 +39,7 @@ export const CATEGORIES = [
     name: 'Garlic Pickle',
     hindi: 'लहसुन का अचार',
     shortDesc: 'Whole aromatic garlic cloves steeped in Kashmiri red chilli and mustard gravy.',
-    image: '/assets/images/garlic-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&auto=format&fit=crop&q=80',
     tag: 'Rich & Therapeutic'
   },
   {
@@ -47,7 +47,7 @@ export const CATEGORIES = [
     name: 'Special Regional Pickles',
     hindi: 'क्षेत्रीय विशेषताएं',
     shortDesc: 'Rare heirloom recipes from Bihar, Rajasthan, Gujarat, North & South India.',
-    image: '/assets/images/hero-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
     tag: 'Heritage Treasures'
   }
 ];
@@ -64,11 +64,11 @@ export const PRODUCTS = [
     spiceLevel: 'Medium Spicy',
     shelfLife: '12 Months',
     badges: ['Bestseller', 'Sun-Matured'],
-    image: '/assets/images/mango-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
     gallery: [
-      '/assets/images/mango-pickle.jpg',
-      '/assets/images/hero-pickle.jpg',
-      '/assets/images/brand-story.jpg'
+      'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
+      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop&q=80'
     ],
     weights: [
       { weight: '250g', price: 199, originalPrice: 249, discount: '20% OFF' },
@@ -109,11 +109,11 @@ export const PRODUCTS = [
     spiceLevel: 'Tangy & Mild',
     shelfLife: '18 Months',
     badges: ['Digestive', 'Heirloom'],
-    image: '/assets/images/lemon-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&auto=format&fit=crop&q=80',
     gallery: [
-      '/assets/images/lemon-pickle.jpg',
-      '/assets/images/hero-pickle.jpg',
-      '/assets/images/combo-box.jpg'
+      'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
+      'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80'
     ],
     weights: [
       { weight: '250g', price: 179, originalPrice: 219, discount: '18% OFF' },
@@ -153,11 +153,11 @@ export const PRODUCTS = [
     spiceLevel: 'Extra Spicy',
     shelfLife: '9 Months',
     badges: ['Fiery Punch', 'Customer Love'],
-    image: '/assets/images/chilli-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?w=800&auto=format&fit=crop&q=80',
     gallery: [
-      '/assets/images/chilli-pickle.jpg',
-      '/assets/images/hero-pickle.jpg',
-      '/assets/images/brand-story.jpg'
+      'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
+      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop&q=80'
     ],
     weights: [
       { weight: '250g', price: 189, originalPrice: 229, discount: '17% OFF' },
@@ -198,11 +198,11 @@ export const PRODUCTS = [
     spiceLevel: 'Medium Spicy',
     shelfLife: '12 Months',
     badges: ['Top Rated', 'Grandma’s Special'],
-    image: '/assets/images/mixed-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80',
     gallery: [
-      '/assets/images/mixed-pickle.jpg',
-      '/assets/images/combo-box.jpg',
-      '/assets/images/hero-pickle.jpg'
+      'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85'
     ],
     weights: [
       { weight: '250g', price: 199, originalPrice: 249, discount: '20% OFF' },
@@ -243,11 +243,11 @@ export const PRODUCTS = [
     spiceLevel: 'Spicy & Robust',
     shelfLife: '12 Months',
     badges: ['Immunity Booster', 'Aromatic'],
-    image: '/assets/images/garlic-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&auto=format&fit=crop&q=80',
     gallery: [
-      '/assets/images/garlic-pickle.jpg',
-      '/assets/images/hero-pickle.jpg',
-      '/assets/images/mixed-pickle.jpg'
+      'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
+      'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80'
     ],
     weights: [
       { weight: '250g', price: 219, originalPrice: 269, discount: '19% OFF' },
@@ -288,11 +288,11 @@ export const PRODUCTS = [
     spiceLevel: 'Assorted Range',
     shelfLife: '12-18 Months',
     badges: ['BEST VALUE', 'Gift Ready', 'Save ₹100'],
-    image: '/assets/images/combo-box.jpg',
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
     gallery: [
-      '/assets/images/combo-box.jpg',
-      '/assets/images/hero-pickle.jpg',
-      '/assets/images/brand-story.jpg'
+      'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
+      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop&q=80'
     ],
     weights: [
       { weight: '4 x 250g (1kg Total)', price: 699, originalPrice: 799, discount: '₹100 OFF' },
@@ -327,10 +327,10 @@ export const PRODUCTS = [
     spiceLevel: 'Pungent & Tangy',
     shelfLife: '12 Months',
     badges: ['Bihari Heritage', 'Rare Delicacy'],
-    image: '/assets/images/hero-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
     gallery: [
-      '/assets/images/hero-pickle.jpg',
-      '/assets/images/brand-story.jpg'
+      'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
+      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop&q=80'
     ],
     weights: [
       { weight: '250g', price: 229, originalPrice: 279, discount: '18% OFF' },
@@ -370,10 +370,10 @@ export const PRODUCTS = [
     spiceLevel: 'Marwari Spicy',
     shelfLife: '12 Months',
     badges: ['Marwar Royal', 'Artisanal Batch'],
-    image: '/assets/images/brand-story.jpg',
+    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop&q=80',
     gallery: [
-      '/assets/images/brand-story.jpg',
-      '/assets/images/combo-box.jpg'
+      'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop&q=80',
+      'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80'
     ],
     weights: [
       { weight: '250g', price: 249, originalPrice: 299, discount: '17% OFF' },
@@ -511,37 +511,37 @@ export const REVIEWS = [
 export const INSTAGRAM_POSTS = [
   {
     id: 1,
-    image: '/assets/images/hero-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=1000&auto=format&fit=crop&q=85',
     likes: 1842,
     caption: 'Tradition bottled with love. Freshly prepared batch of LAXMI Mango Achar getting sun-cured. ☀️'
   },
   {
     id: 2,
-    image: '/assets/images/brand-story.jpg',
+    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop&q=80',
     likes: 2490,
     caption: 'Generations of culinary secrets, passed down by our dadi. Nothing beats homemade achar!'
   },
   {
     id: 3,
-    image: '/assets/images/combo-box.jpg',
+    image: 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80',
     likes: 3120,
     caption: 'The Ultimate Achar Combo box is here. 4 flavours of pure nostalgia, gift-wrapped for your loved ones.'
   },
   {
     id: 4,
-    image: '/assets/images/mango-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80',
     likes: 1950,
     caption: 'That vibrant golden-red glow of pure kacchi ghani mustard oil and Kashmiri mirch!'
   },
   {
     id: 5,
-    image: '/assets/images/chilli-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1588252303782-cb80119abd6d?w=800&auto=format&fit=crop&q=80',
     likes: 1430,
     caption: 'Spice lovers, assemble! Slit green chillies packed with aromatic rai kuria.'
   },
   {
     id: 6,
-    image: '/assets/images/mixed-pickle.jpg',
+    image: 'https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80',
     likes: 2180,
     caption: 'Winter carrots, lime, cauliflower and mango. A bowl of Pachranga happiness.'
   }
