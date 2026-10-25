@@ -10,6 +10,7 @@
     "build": "npm run build --prefix frontend",
     "build:frontend": "npm run build --prefix frontend",
     "build:backend": "npm run build --prefix backend",
+    "vercel:dev": "vercel dev --cwd frontend --local",
     "install:all": "npm install && npm install --prefix frontend && npm install --prefix backend",
     "db:migrate": "npm run db:migrate --prefix backend",
     "db:seed": "npm run db:seed --prefix backend"
